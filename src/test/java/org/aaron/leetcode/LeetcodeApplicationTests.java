@@ -1,4 +1,4 @@
-package org.aaron.leetcodejava;
+package org.aaron.leetcode;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
