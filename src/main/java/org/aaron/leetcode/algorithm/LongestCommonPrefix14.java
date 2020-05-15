@@ -30,10 +30,10 @@ public class LongestCommonPrefix14 {
         String res = strs[0];
         for (String str : strs) {
             while (!str.startsWith(res)) {
-                if (res.length() == 1) {
+                res = res.substring(0, res.length() - 1);
+                if (res.isEmpty()) {
                     return "";
                 }
-                res = res.substring(0, res.length() - 1);
             }
         }
         return res;
