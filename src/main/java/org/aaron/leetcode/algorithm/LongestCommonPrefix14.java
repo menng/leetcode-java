@@ -23,7 +23,24 @@ package org.aaron.leetcode.algorithm;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class LongestCommonPrefix14 {
-    public String longestCommonPrefix(String[] strs) {
-        return null;
+    public static String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        String res = strs[0];
+        for (String str : strs) {
+            while (!str.startsWith(res)) {
+                res = res.substring(0, res.length() - 1);
+                if (res.isEmpty()) {
+                    return "";
+                }
+            }
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(longestCommonPrefix(new String[]{"abc", "ab", "abcd"}));
+        System.out.println(longestCommonPrefix(new String[]{"abc", "cd", "ef"}));
     }
 }
