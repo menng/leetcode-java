@@ -16,5 +16,10 @@ public class StackDemo {
         System.out.println(stack);
         System.out.println(stack.search(1));
         System.out.println(stack.search(4));
+
+        System.out.println(stack.push(6));
+        System.out.println(stack.empty());
+        System.out.println(stack.peek());
+        System.out.println(stack.pop());
     }
 }
