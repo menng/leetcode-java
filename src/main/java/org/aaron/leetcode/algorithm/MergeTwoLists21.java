@@ -5,9 +5,9 @@ package org.aaron.leetcode.algorithm;
  * https://leetcode-cn.com/problems/merge-two-sorted-lists/
  */
 class Solution {
-    public LinkedListNode mergeTwoLists(LinkedListNode l1, LinkedListNode l2) {
-        LinkedListNode dummy = new LinkedListNode(0);
-        LinkedListNode preHead = dummy;
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);
+        ListNode preHead = dummy;
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
                 preHead.next = l1;
@@ -28,7 +28,7 @@ class Solution {
 
 class ListNode {
     int val;
-    LinkedListNode next;
+    ListNode next;
 
     ListNode() { }
 
@@ -36,7 +36,7 @@ class ListNode {
         this.val = val;
     }
 
-    ListNode(int val, LinkedListNode next) {
+    ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
     }

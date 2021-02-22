@@ -19,9 +19,9 @@ package org.aaron.leetcode.algorithm;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class DeleteDuplicates83 {
-    public LinkedListNode deleteDuplicates(LinkedListNode head) {
+    public ListNode deleteDuplicates(ListNode head) {
         // currentHead 为操作指针，用于操作head的next结点指向。
-        LinkedListNode currentHead = head;
+        ListNode currentHead = head;
         while (currentHead != null && currentHead.next != null) {
             if (currentHead.val == currentHead.next.val) {
                 // 相等时移动两步。
@@ -32,23 +32,5 @@ public class DeleteDuplicates83 {
             }
         }
         return head;
-    }
-}
-
-
-class LinkedListNode {
-    int val;
-    LinkedListNode next;
-
-    LinkedListNode() {
-    }
-
-    LinkedListNode(int val) {
-        this.val = val;
-    }
-
-    LinkedListNode(int val, LinkedListNode next) {
-        this.val = val;
-        this.next = next;
     }
 }
