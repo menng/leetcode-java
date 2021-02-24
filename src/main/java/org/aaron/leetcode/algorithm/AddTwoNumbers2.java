@@ -1,0 +1,58 @@
+package org.aaron.leetcode.algorithm;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 2. 两数相加
+ * https://leetcode-cn.com/problems/add-two-numbers/
+ */
+public class AddTwoNumbers2 {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode head = null, tail = null;
+        int carry = 0;
+        while(l1 != null || l2 != null) {
+            int n1 = l1 != null ? l1.val : 0;
+            int n2 = l2 != null ? l2.val : 0;
+            int sum = n1 + n2 + carry;
+            if (head == null) {
+                head = tail = new ListNode(sum % 10);
+            } else {
+                tail.next = new ListNode(sum % 10);
+                tail = tail.next;
+            }
+
+            carry = sum / 10;
+
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+
+        if (carry > 0) {
+            tail.next = new ListNode(carry);
+        }
+
+        return head;
+    }
+
+    public static void main(String[] args) {
+        ListNode n5 = new ListNode(1);
+        ListNode n6 = new ListNode(1);
+
+        ListNode n3 = new ListNode(2, n5);
+        ListNode n4 = new ListNode(4, n6);
+
+        ListNode n1 = new ListNode(2, n3);
+        ListNode n2 = new ListNode(4, n4);
+
+        AddTwoNumbers2 twoNumbers = new AddTwoNumbers2();
+        ListNode result = twoNumbers.addTwoNumbers(n1, n2);
+        System.out.println(result.val);
+
+    }
+}
