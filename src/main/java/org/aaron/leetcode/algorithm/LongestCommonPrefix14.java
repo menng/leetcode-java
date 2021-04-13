@@ -39,8 +39,41 @@ public class LongestCommonPrefix14 {
         return res;
     }
 
+    /**
+     * 以此比较前后两个字符串，得出前缀后，继续比较，直到得出结果。
+     * @param strs
+     * @return
+     */
+    public static String longestCommonPrefix2(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+
+        String prefix = strs[0];
+        for(int i=1; i < strs.length; i++) {
+            prefix = longcp(prefix, strs[i]);
+            if (prefix.length() == 0) {
+                return "";
+            }
+        }
+
+        return prefix;
+    }
+
+    private static String longcp(String str1, String str2) {
+        int length = Math.min(str1.length(), str2.length());
+        int idx = 0;
+        while(idx < length && str1.charAt(idx) == str2.charAt(idx)) {
+            idx++;
+        }
+
+        return str1.substring(0, idx);
+    }
+
+
     public static void main(String[] args) {
         System.out.println(longestCommonPrefix(new String[]{"abc", "ab", "abcd"}));
         System.out.println(longestCommonPrefix(new String[]{"abc", "cd", "ef"}));
+        System.out.println(longestCommonPrefix2(new String[]{"abc", "cd", "ef"}));
     }
 }
