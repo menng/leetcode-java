@@ -9,7 +9,7 @@ import java.util.List;
  * 冒泡排序
  */
 public class BubbleSort {
-    public static int[] bubbleSort(int[] s) {
+    public static void bubbleSort(int[] s) {
         int length = s.length;
         // length - 1次
         for(int i = 0; i < length - 1; i++) {
@@ -22,8 +22,6 @@ public class BubbleSort {
                 }
             }
         }
-
-        return s;
     }
 
     public static void main(String[] args) {
