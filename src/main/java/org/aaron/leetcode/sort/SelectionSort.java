@@ -17,8 +17,8 @@ public class SelectionSort {
     public static void main(String[] args) {
         int[] s = new int[]{6, 5, 3, 2, 4};
         selectionSort(s);
-        for(int i=0; i < s.length; i++) {
-            System.out.println(s[i]);
+        for (int j : s) {
+            System.out.println(j);
         }
     }
 }
