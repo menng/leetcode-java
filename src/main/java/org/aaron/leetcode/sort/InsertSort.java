@@ -33,11 +33,25 @@ public class InsertSort {
       }
     }
 
+    public static void insertSort3(int[] s){
+        for(int i=1; i < s.length; i++) {
+            int tmp = s[i];
+            int j = 0;
+            for (j=i-1; j >= 0 && s[j] > tmp; j--) {
+                s[j+1] = s[j];
+            }
+
+            s[++j] = tmp;
+        }
+
+    }
+
     public static void main(String[] args) {
         int[] s = new int[]{5, 4, 3, 2, 1};
         int[] t = new int[]{5, 4, 3, 2, 1};
         insertSort(s);
-        insertSort2(t);
+//        insertSort2(t);
+        insertSort3(t);
         for (int i=0; i < s.length; i++) {
             System.out.println(s[i]);
         }
