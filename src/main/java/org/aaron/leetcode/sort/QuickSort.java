@@ -89,16 +89,15 @@ public class QuickSort {
                 }
             }
 
-            int index = left;
             s[left] = tmp;
 
-            quickSort3(s, low, index - 1);
-            quickSort3(s, index + 1, high);
+            quickSort3(s, low, left - 1);
+            quickSort3(s, left + 1, high);
         }
     }
 
     public static void main(String[] args) {
-        int[] t = new int[]{6, 5, 4, 3, 2, 1};
+        int[] t = new int[]{6, 5, 4, 3, 2, 2};
         quickSort3(t, 0, t.length - 1);
 
         System.out.println(Arrays.toString(t));
